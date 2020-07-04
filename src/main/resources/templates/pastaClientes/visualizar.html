@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Cliente</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body class="bg-dark">
+    <div class="container mt-4 border border-primary rounded bg-white">
+        <form class="mt-4 mb-4">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" aria-describedby="nome" th:field="*{cliente.nome}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="text" class="form-control" id="telefone" name="telefone" aria-describedby="telefone" th:field="*{cliente.telefone}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereco</label>
+                <input type="text" class="form-control" id="endereco" name="endereco" aria-describedby="endereco" th:field="*{cliente.endereco}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="idade">idade</label>
+                <input type="text" class="form-control" id="idade" name="idade" aria-describedby="idade" th:field="*{cliente.idade}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="Cpf">Tipo do Medicamento</label>
+                <input type="text" class="form-control" id="cpf" name="cpf" aria-describedby="cpf" th:field="*{cliente.cpf}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Id do cliente</label>
+                <input type="text" class="form-control" id="id" name="id" aria-describedby="id" th:field="*{cliente.id}" readonly>
+            </div>
+            <div class="d-flex justify-content-between">
+                <a href="/clientes" class="btn btn-primary">Voltar</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/js/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="/js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+</html>

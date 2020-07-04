@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Contato</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body class="bg-dark">
+    <div class="container mt-5 border border-primary rounded bg-white">
+        <form action="/editarmedicamento" method="post" class="mt-4 mb-4">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" required id="nome" name="nome" aria-describedby="nome" th:field="*{medicamento.nome}" placeholder="Digite o nome">
+            </div>
+            <div class="form-group">
+                <label for="dosagem">Dosagem</label>
+                <input type="text" class="form-control" required id="dosagem" name="dosagem" aria-describedby="dosagem" th:field="*{medicamento.dosagem}" placeholder="Digite a dosagem">
+            </div>
+            <div class="form-group">
+                <label for="dosagem">Quantidade</label>
+                <input type="text" class="form-control" required id="quantidade" name="quantidade" aria-describedby="quantidade" th:field="*{medicamento.quantidade}" placeholder="Digite a quantidade">
+            </div>
+            <div class="form-group">
+                <label for="tarja">Selecione a tarja do remedio</label>
+                <select class="form-control" id="tarja" required>
+                    <option value="0" disabled>Tarja</option>
+                    <option value="1">Sem tarja</option>
+                    <option value="2" style="background-color: yellow;color: white;">Tarja amarela</option>
+                    <option value="3" style="background-color: red;color: white;">Tarja vermelha (sem retenção da
+                        receita)</option>
+                    <option value="4" style="background-color: red;color: white;">Tarja vermelha (com retenção da
+                        receita)</option>
+                    <option value="5" style="background-color: black; color: white;">Tarja preta</option>
+                </select>
+                <input type="text" hidden id="tarjainput" name="tarja">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Selecione o tipo do medicamento</label>
+                <select class="form-control" id="tipo" required>
+                    <option disabled>Tipo do Medicamento</option>
+                    <option value="1">Fitoterápico</option>
+                    <option value="2">Alopático</option>
+                    <option value="3">Homeopático</option>
+                    <option value="4">Similar</option>
+                    <option value="5">Genérico</option>
+                    <option value="6">Referência</option>
+                    <option value="7">Manipulado</option>
+                </select>
+                <input type="text" hidden id="tipoinput" name="tipo">
+            </div>
+            <div class="form-group">
+                <input type="number" hidden id="id" name="id" th:field="*{medicamento.id}">
+            </div>
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-primary" onclick="cadastrar()">Salvar</button>
+                <a href="/medicamentos" class="btn btn-primary">Voltar</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/js/cadastromedicamento.js"></script>
+    <script src="/js/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="/js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+</html>

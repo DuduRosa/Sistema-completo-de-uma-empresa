@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicamentos</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/medicamentos.css">
+</head>
+
+<body>
+    <div class="container">
+        <!--Lista de Medicamentos-->
+        <div class="d-flex justify-content-between">
+            <a href="/cadastromedicamento" class="btn btn-primary mt-5">Cadastrar Medicamento</a>
+            <a href="/" class="btn btn-primary mt-5">Voltar</a>
+        </div>
+
+        <!--Listagem de medicamentos-->
+        <div class="mt-5 border border-primary">
+            <div class="overflow-auto" id="divOverflow">
+                <ul class="list-group list-group-horizontal mb-4">
+                    <li class="list-group-item w-25">Nome</li>
+                    <li class="list-group-item w-25">Dosagem</li>
+                    <li class="list-group-item w-25">Quantidade</li>
+                    <li class="list-group-item w-25">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    </li>
+                </ul>
+                <ul class="list-group list-group-horizontal" th:if="${lista.size() > 0}" th:each="medicamento : ${lista}">
+                    <a th:href="@{/visualizar/{id}(id=${medicamento.id})}" class="list-group-item w-25">
+                        <li th:text="${medicamento.nome}" style="list-style: none;"></li>
+                    </a>
+                    <li class="list-group-item w-25" th:text="${medicamento.dosagem}"></li>
+                    <li class="list-group-item w-25" th:text="${medicamento.quantidade}"></li>
+                    <li class="list-group-item ml-5" style="width: 10%;">
+                        <a th:href="@{/excluir/{id}(id=${medicamento.id})}" class="btn btn-danger">Excluir</a>
+                    </li>
+                    <li class="list-group-item" style="width: 10%;">
+                        <a th:href="@{/editar/{id}(id=${medicamento.id})}" class="btn btn-warning">Editar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="/js/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="/js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+</html>
